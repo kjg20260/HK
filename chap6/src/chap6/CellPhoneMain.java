@@ -1,0 +1,32 @@
+package chap6;
+
+public class CellPhoneMain {
+	 
+	public static void main(String[] args) { 
+		CellPhone myPhone = new CellPhone("GALAXY-9");
+		try {
+			myPhone.charge( 20 );  //20분간 충전을 한다.
+			myPhone.printBattery();
+			
+			myPhone.call( 300 );  //300분간 통화를 한다.
+			myPhone.printBattery();
+			
+			myPhone.charge( 50 );  //50분간 충전을 한다.
+			myPhone.printBattery();
+			
+			myPhone.call( 40 );  //40분간 통화를 한다.
+			myPhone.printBattery();
+			
+			myPhone.call( -20 );  //통화시간입력오류
+		}catch(IllegalArgumentException e) {
+			//System.out.println(e);
+		}
+		CellPhone yourPhone = new CellPhone("galaxy-9");
+		
+		if( myPhone.isSame(yourPhone) ) {
+			System.out.println("동일 모델입니다.");
+		} else {
+			System.out.println("다른 모델입니다.");
+		} 
+	} 
+}
